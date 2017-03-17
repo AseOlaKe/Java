@@ -1,0 +1,146 @@
+BLACKPACK
+
+-Main 
+
+-Modulos iniciales
+	
+	validar apuesta - hecho
+	dividir mano - hecho (no es subprograma, esta en el main)
+	plantarse - no es necesario, se realiza en el main
+	comprobar mano - hecho
+	sacar carta - hecho
+	imprimir resultado final jugada - hecho
+	aplicar apuesta - hecho
+	pantalla de game over - hecho
+	validar AS - hecho
+	comprobar blackjack - hecho
+	ver mano - hecho
+	ver mano dividida - hecho
+	ver mano crupier - hecho
+	ver dinero - hecho
+
+-Subprogramas
+
+	(Jarana)
+	validar apuesta
+	presentar menu
+	opcion valida
+	presentar menu turno
+	opcion valida turno
+	presentar menu carta
+	opcion valida carta
+	presentar menu dividir mano
+	opcion valida dividir mano
+	imprimir game over
+	consultar dinero
+	ver mano actual
+	ver mano dividida
+	ver mano actual crupier
+	(Luis)
+	sacar carta
+	comprobar mano
+	validar as
+	comprobar blackpack
+	imprimir resultado
+	aplicar apuesta
+
+-Clases
+
+	Jugador
+	Carta
+
+	
+Cambios a realizar:
+
+		implementar pseudocodigo en el codigo
+
+cambios realizados 28/12:
+	-un viaje de cosas y ya no me acuerdo xd
+
+	-el bucle ese de los cojones de plantarse ==false y valorMano<=21 y sus muertos lo he arreglado. el fallo es que no volvia a darle el valor de false
+	a la variable plantarse, por lo que en la segunda iteracion ya estaba en true desde el principio y salia del bucle. SU PUTA MADRE
+
+	-he implementado el validador de as en el pp, es una puta locura y como pone arriba, si sale un as en la cuarta carta que robamos se jode todo
+
+	-he hecho un cambio en el bucle que se lleva a cabo para repetir el el menu de que hacer en el turno. Si seleccionamos pedir carta, despues no aparecera doblar 
+	ni dividir, ya que estos dos solo se pueden hacer al empezar el turno, cuando solo tienes las 2 cartas iniciales
+
+	-he implementado la opcion de doblar. una vez la realizas, se duplica la apuesta, te dan otra carta y el turno acaba directamente(salta a la opcion de plantarse).
+
+	-cree en su momento 4 variables tipo carta para las manos iniciales de jugador y crupier, se usan para validar AS y se usaran para la opcion de dividir.
+
+	-aparte de por los fallos que tiene y lo que falta por implementar, el juego ya es completamente jugable. jarana cabron consigue ejecutarlo cagondio
+
+cambios realizados 2/1:
+	-el subprograma validador de AS ya esta implementado, aunque no realiza completamente bien su funcion (vease en los cambios a realizar)
+	
+	-la segunda carta del crupier ya no se muestra hasta que el jugador haya terminado su turno
+
+	-ya se puede hacer un blackpack (AS y figura en la mano inicial, y se paga a 3:2 si el crupier no logra un 21 tambien (si consigue 21 es empate y no se paga na))
+	Tambien se pueden hacer en ambas manos al dividir
+
+	-ya esta implementada la opcion de dividir mano, y de momento parece que funciona bien aunque es tan locura que no se si la he testeado por completo
+
+	-he arreglado el sistema de apuestas, para que no pueda apostar/doblar/dividir en caso de que no tenga suficiente dinero
+
+	-si se queda sin dinero termina el juego
+
+	-ya no dice que la mano incial vale 22 al salir dos AS 
+
+	-ya imprime los resultados finales de ambas manos correctamente
+
+	-una vez dividida la mano, en las "submanos" he quitado la opcion de volver a dividir, ya que evidentemente el programa seria ya la reostia de complejo, y ademas
+	en algunos tipos de blackjack no te dejan hacerlo
+
+	-he quitado la variable dineroJugador, IDK pa que la habiamos creado, ya que el dinero esta almacenado en la clase Jugador
+
+cambios realizados 3/1:
+	-Menús pasados a subprogramas y sus validaciones de las opciones
+	
+	-Errores de menor importancia
+	
+	-Ahora vengo y sigo cohone
+
+cambios realizados 4/1:
+	-ahora solo da fallo la 7a carta que sacas, lo cual es extremadamente raro que llegue a ocurrir (en el peor caso: un 0,8% para el jugador, un 0,1% para el crupier)
+
+	-ahora no dice que la mano inicial del crupier vale 22 cuando comienza con 2 AS
+
+	-he subido el programa que calcula la probabilidad de fallo en las manos
+
+	-he modificado el subprograma de validar AS para adaptarlo a las nuevas variables Carta
+
+	-he quitado la variable nombreJugador, no servia para nada
+
+	-he inicializado todas las variables tipo carta a valor 0 dentro del bucle que repite el proceso de la jugada, ya que si en una jugada has robado 5 cartas y en 
+	la siguiente solo 3, tambien te sumara el valor de las cartas 4 y 5 que robaste en la jugada anterior. MEDIA HORA para darme cuenta de que era ese el problema
+
+cambios realizados 9/1:
+	-pantalla game over pasada a subprograma
+
+	-subprogramas para ver manos y dinero hechos
+
+	-subprogramas para imprimir el resultado final de la jugada y aplicar la apuesta al dinero del jugador hechos
+
+	-ya funcionan los subprogramas para ver manos y dinero
+
+	-he modificado los subprogramas de ver cartas para que llamen al metodo validarAS cuando vayan a sumar el valor de todas las cartas, para que no sume mal los ases
+
+	-he añadido al main un bucle para volver a iniciar el juego
+
+cambios realizados 10/1:
+	-opcion del bucle de volver a jugar validada correctamente
+
+	-subprogramas de menu de carta y validador de opcion de menu de carta arreglados
+
+	-todos los conductores hechos
+
+	-he cambiado una mijita el subprograma de consultar dinero 
+
+cambios realizados 11/1:
+	-analisis completado
+
+cambios realizados 16/1:
+	-añadidos todos los thread sleep
+
+	-pseudocodigo terminado
