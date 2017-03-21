@@ -62,8 +62,7 @@ public class Avanzados {
             merge(A,izq, puntoMedio, der);
 		}
 	}
-	public static void merge(int A[],int izq, int puntoMedio, int der)
-	{
+	public static void merge(int A[],int izq, int puntoMedio, int der){
 		   int i, j, k;
 		   int [] B = new int[A.length]; //array auxiliar
 		   for (i=izq; i<=der; i++) //copia ambas mitades en el array auxiliar
@@ -77,7 +76,7 @@ public class Avanzados {
 		                     A[k++]=B[j++];
 		             while (i<=puntoMedio) //copia los elementos que quedan de la
 		                           A[k++]=B[i++]; //primera mitad (si los hay)
-	}
+		 }
 	
 	
 }
