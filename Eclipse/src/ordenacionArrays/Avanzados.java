@@ -18,20 +18,45 @@ public class Avanzados {
 		}
 	}
 	public static void shell(int []A){
-		   int salto, aux, i;
-		   boolean cambios;
-		   for(salto=A.length/2; salto!=0; salto/=2){
-		           cambios=true;
-		           while(cambios){ // Mientras se intercambie algún elemento
-		                       cambios=false;
-		                       for(i=salto; i< A.length; i++) // se da una pasada
-		                               if(A[i-salto]>A[i]){ // y si están desordenados
-		                                     aux=A[i]; // se reordenan
-		                                     A[i]=A[i-salto];
-		                                     A[i-salto]=aux;
-		                                     cambios=true; // y se marca como cambio.
-		                               }
-		                        }
-		            }
-		}
+		   int salto, aux, i, j;
+		  
+		   for(salto=A.length/2; salto!=0; salto/=2)
+		   {
+		         for(i=salto;i<A.length;i++)
+		         { 
+		        	aux=A[i];
+		        	for(j=i;j>=salto&&aux<A[j-salto];j=j-salto)
+		        	{
+		        		A[j]=A[j-salto];
+		        	}
+		        	A[j]=aux;
+		         }                   
+		    }
+	}
+	public static void mergesort(int A[],int izq, int der)
+	{
+	    if (izq<der){
+	            int m=(izq+der)/2;
+	            mergesort(A,izq, m);
+	            mergesort(A,m+1, der);
+	            merge(A,izq, m, der);
+	    }
+	}
+	public static void merge(int A[],int izq, int m, int der)
+	{
+		   int i, j, k;
+		   int [] B = new int[A.length]; //array auxiliar
+		   for (i=izq; i<=der; i++) //copia ambas mitades en el array auxiliar
+		             B[i]=A[i];
+
+		             i=izq; j=m+1; k=izq;
+		             while (i<=m && j<=der) //copia el siguiente elemento más grande
+		             if (B[i]<=B[j])
+		                     A[k++]=B[i++];
+		             else
+		                     A[k++]=B[j++];
+		             while (i<=m) //copia los elementos que quedan de la
+		                           A[k++]=B[i++]; //primera mitad (si los hay)
+	 }
+	
 }

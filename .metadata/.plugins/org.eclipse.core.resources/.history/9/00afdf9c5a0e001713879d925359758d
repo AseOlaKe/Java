@@ -1,0 +1,37 @@
+package ordenacionArrays;
+
+public class Avanzados {
+	
+	//i se inicializa a 1(2da posicion del array), j se inicializa a i y va avanzando hasta la posicion 1 intercambiando los elementos que sean menores
+	public static void metodoInsercion(int[]array)
+	{
+		int i, j, aux;
+		
+		for(i=1;i<array.length;i++)
+		{
+			for(j=i;j>0&&array[j-1]>array[j];j--)
+			{
+				aux = array[j]; 
+				array[j] = array[j-1];
+				array[j-1] = aux;
+			}
+		}
+	}
+	public static void shell(int []A){
+		   int salto, aux, i, j;
+		  
+		   for(salto=A.length/2; salto!=0; salto/=2)
+		   {
+		         for(i=salto;i<A.length;i++)
+		         { 
+		        	aux=A[i];
+		        	for(j=i;j>=salto&&aux<A[j-salto];j=j-salto)
+		        	{
+		        		A[j]=A[j-salto];
+		        	}
+		        	A[j]=aux;
+		         }                   
+		    }
+	}
+	
+}
