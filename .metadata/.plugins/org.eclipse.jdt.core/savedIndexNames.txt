@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.129+C:\Users\pjarana\Desktop\GitHub\Java\.metadata\.plugins\org.eclipse.jdt.core
 1574318262.index
 828133061.index
@@ -14,7 +15,24 @@ INDEX VERSION 1.129+C:\Users\pjarana\Desktop\GitHub\Java\.metadata\.plugins\org.
 1947431546.index
 4004133052.index
 2338776811.index
+=======
+INDEX VERSION 1.129+E:\_Perfil\Desktop\GitHub\Java\.metadata\.plugins\org.eclipse.jdt.core
+2133282975.index
+808374113.index
+2855899100.index
+618723895.index
+414978335.index
+2637943071.index
+4184201189.index
+2019903893.index
+2800558102.index
+471236001.index
+985286902.index
+781808.index
+>>>>>>> origin/master
 2284841917.index
-1877021558.index
-834584462.index
-2486087126.index
+1075794691.index
+2809250744.index
+1644702904.index
+3407430047.index
+3417200662.index
