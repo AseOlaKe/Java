@@ -17,7 +17,7 @@ public class Avanzados {
 			}
 		}
 	}
-	public static void shell(int[]a)
+	public static void shell2(int[]a)
 	{
 		int aux,i,j,salto;
 		
