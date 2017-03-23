@@ -1,0 +1,11 @@
+package Cadenas;
+
+public class TestCadenas {
+
+		public static void main (String[]args)
+		{
+			Cadena cadena=new Cadena("Vamo a what a pittearno");
+			cadena.cadenaInv();
+			System.out.println(cadena.getCadena());
+		}
+}

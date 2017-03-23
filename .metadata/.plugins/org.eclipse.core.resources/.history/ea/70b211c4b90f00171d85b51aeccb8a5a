@@ -1,0 +1,84 @@
+package Cadenas;
+/*
+ * Interfaz
+ * 
+ * Propiedades Básicas: cadena, String consultable y modificable
+ * Propiedades derivadas: No tiene
+ * Propiedades compartidas: No tiene
+ * Métodos consultores y modificadores: void setCadena(String cadena), String getCadena()
+ * Métodos añadidos:
+ * -Invertir cadena
+ * -Poner en máyus su primer caracter
+ * -Eliminar espacios en blanco
+ * -FormarPlural
+ */
+public class Cadena {
+	
+	private String cadena;
+	
+	//Constructores
+	public Cadena()
+	{
+		cadena=" ";
+	}
+	public Cadena(String cadena)
+	{
+		this.cadena=cadena;
+	}
+	public Cadena(Cadena cadena)
+	{
+		this.cadena=cadena.cadena;
+	}
+	//Métodos consultores y modificadores
+	public String getCadena()
+	{
+		return cadena;
+	}
+	public void setCadena(String cadena)
+	{
+		this.cadena=cadena;
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método invierte una cadena
+	 * Prototipo: public void cadenaInv()
+	 * Precondiciones: No hay
+	 * Entradas: No hay
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 * E/S: Una cadena
+	 * 
+	 * RESGUARDO
+	 * 
+	 * public void cadenaInv()
+	 * {
+	 * 		System.out.println("En construccion");
+	 * }
+	 */
+	public void cadenaInv()
+	{
+		StringBuilder cadena= new StringBuilder(this.cadena);
+		cadena.reverse();
+		this.cadena=cadena.toString();
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método pone en mayúsculas el primer carácter de una cadena
+	 * Prototipo: public void
+	 * Precondiciones: No hay
+	 * Entradas: No hay
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 * E/S: Una cadena
+	 * 
+	 * RESGUARDO
+	 * 
+	 * public void cadenaInv()
+	 * {
+	 * 		System.out.println("En construccion");
+	 * }
+	 */
+	
+}

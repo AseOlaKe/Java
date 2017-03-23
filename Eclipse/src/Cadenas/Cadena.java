@@ -2,10 +2,10 @@ package Cadenas;
 /*
  * Interfaz
  * 
- * Propiedades Básicas: No tiene
+ * Propiedades Básicas: cadena, String consultable y modificable
  * Propiedades derivadas: No tiene
  * Propiedades compartidas: No tiene
- * Métodos consultores y modificadores: No tiene
+ * Métodos consultores y modificadores: void setCadena(String cadena), String getCadena()
  * Métodos añadidos:
  * -Invertir cadena
  * -Poner en máyus su primer caracter
@@ -13,12 +13,36 @@ package Cadenas;
  * -FormarPlural
  */
 public class Cadena {
-
+	
+	private String cadena;
+	
+	//Constructores
+	public Cadena()
+	{
+		cadena=" ";
+	}
+	public Cadena(String cadena)
+	{
+		this.cadena=cadena;
+	}
+	public Cadena(Cadena cadena)
+	{
+		this.cadena=cadena.cadena;
+	}
+	//Métodos consultores y modificadores
+	public String getCadena()
+	{
+		return cadena;
+	}
+	public void setCadena(String cadena)
+	{
+		this.cadena=cadena;
+	}
 	/*
 	 * Interfaz
 	 * 
 	 * Este método invierte una cadena
-	 * Prototipo: public String cadenaInv(String cadena)
+	 * Prototipo: public void cadenaInv()
 	 * Precondiciones: No hay
 	 * Entradas: No hay
 	 * Salidas: No hay
@@ -27,15 +51,93 @@ public class Cadena {
 	 * 
 	 * RESGUARDO
 	 * 
-	 * public String cadenaInv(String cadena)
+	 * public void cadenaInv()
 	 * {
-	 * 		return cadena;
+	 * 		System.out.println("En construccion");
 	 * }
 	 */
-	public String cadenaInv(String cadena)
+	public void cadenaInv()
 	{
-		
-		return cadena;
+		StringBuilder cadena= new StringBuilder(this.cadena);
+		cadena.reverse();
+		this.cadena=cadena.toString();
 	}
-	
+	/*
+	 * Interfaz
+	 * 
+	 * Este método pone en mayúsculas el primer carácter de una cadena
+	 * Prototipo: public void charMayus()
+	 * Precondiciones: No hay
+	 * Entradas: No hay
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 * E/S: Una cadena
+	 * 
+	 * RESGUARDO
+	 * 
+	 * public void cadenaInv()
+	 * {
+	 * 		System.out.println("En construccion");
+	 * }
+	 */
+	public void charMayus()
+	{
+		cadena=Character.toUpperCase(cadena.charAt(0))+cadena.substring(1);
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método elimina los espacios en blanco de una cadena
+	 * Prototipo: public void eliminarEspacioBlanco()
+	 * Precondiciones: No hay
+	 * Entradas: No hay
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 * E/S: Una cadena
+	 * 
+	 * RESGUARDO
+	 * 
+	 * public void eliminarEspacioBlanco()
+	 * {
+	 * 		System.out.println("En construccion");
+	 * }
+	 */
+	public void eliminarEspacioBlanco()
+	{
+		cadena=cadena.replace(" ","");
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método escribe la última palabra de la cadena en plural
+	 * Prototipo: public void formarPlural()
+	 * Precondiciones: No hay
+	 * Entradas: No hay
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 * E/S: Una cadena
+	 * 
+	 * RESGUARDO
+	 * 
+	 * public void formarPlural()
+	 * {
+	 * 		System.out.println("En construccion");
+	 * }
+	 */
+	public void formarPlural()
+	{
+		cadena.toLowerCase();
+		if(Character.isDigit(cadena.charAt(cadena.length()-1)))
+		{
+			System.out.println("Cadena no valida para formar el plural");
+		}
+		else if(cadena.endsWith("a")||cadena.endsWith("e")||cadena.endsWith("i")||cadena.endsWith("o")||cadena.endsWith("u"))		
+		{
+			cadena=cadena+"s";
+		}
+		else
+		{
+			cadena=cadena+"es";
+		}
+	}
 }
