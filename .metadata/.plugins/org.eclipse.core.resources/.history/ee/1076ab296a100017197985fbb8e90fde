@@ -1,0 +1,11 @@
+package Cadenas;
+
+public class TestCadenas {
+
+		public static void main (String[]args)
+		{
+			Cadena cadena=new Cadena("vamo a wHat a pittearn9");
+			cadena.formarPlural();
+			System.out.println(cadena.getCadena());
+		}
+}

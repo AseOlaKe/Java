@@ -1,0 +1,20 @@
+package ligaFutbol;
+/*
+ * Análisis
+ * 
+ * Este programa es una aplicacion de gestion de una liga de fútbol
+ * Entradas:
+ *		- Nombre del equipo local, nombre del equipo visitante
+ * 		- Resultado del partido, dos enteros
+ * Salidas:
+ * 		-
+ * 
+ */
+
+public class MAIN {
+	public static void main (String[]args)
+	{
+		
+	}
+
+}

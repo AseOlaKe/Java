@@ -17,24 +17,7 @@ public class Avanzados {
 			}
 		}
 	}
-<<<<<<< HEAD
-	public static void shell(int[]a)
-	{
-		int aux,i,j,salto;
-		
-		for(salto=a.length/2;salto!=0;salto=salto/2)
-		{
-			for(i=salto;i<a.length;i++)
-			{
-				aux=a[i];
-				for(j=i;j>=salto&&aux<a[j-salto];j = j - salto)
-				{
-					a[j]=a[j-salto];
-				}
-				a[j]=aux;
-			}
-		}
-	}
+
 	public static void mergeSort(int[]A, int izq, int der)
 	{
 		int puntoMedio;
@@ -46,8 +29,6 @@ public class Avanzados {
             merge(A,izq, puntoMedio, der);
 		}
 	}
-	public static void merge(int A[],int izq, int puntoMedio, int der)
-=======
 	public static void shell(int []A){
 		   int salto, aux, i, j;
 		  
@@ -73,34 +54,68 @@ public class Avanzados {
 	            merge(A,izq, m, der);
 	    }
 	}
-	public static void merge(int A[],int izq, int m, int der)
->>>>>>> origin/master
+	public static void merge(int A[],int izq, int puntoMedio, int der)
+
 	{
 		   int i, j, k;
 		   int [] B = new int[A.length]; //array auxiliar
 		   for (i=izq; i<=der; i++) //copia ambas mitades en el array auxiliar
 		             B[i]=A[i];
 
-<<<<<<< HEAD
+
 		             i=izq; j=puntoMedio+1; k=izq;
 		             while (i<=puntoMedio && j<=der) //copia el siguiente elemento más grande
-=======
-		             i=izq; j=m+1; k=izq;
-		             while (i<=m && j<=der) //copia el siguiente elemento más grande
->>>>>>> origin/master
+
+		             i=izq; j=puntoMedio+1; k=izq;
+		             while (i<=puntoMedio && j<=der) //copia el siguiente elemento más grande
+
 		             if (B[i]<=B[j])
 		                     A[k++]=B[i++];
 		             else
 		                     A[k++]=B[j++];
-<<<<<<< HEAD
+
 		             while (i<=puntoMedio) //copia los elementos que quedan de la
 		                           A[k++]=B[i++]; //primera mitad (si los hay)
-	}
 	
-=======
-		             while (i<=m) //copia los elementos que quedan de la
+	
+
+		             while (i<=puntoMedio) //copia los elementos que quedan de la
 		                           A[k++]=B[i++]; //primera mitad (si los hay)
 	 }
->>>>>>> origin/master
+	public static int busquedaSec(int []a,int dato)
+	{
+		int i, encontrado=-1;
+		for(i=0;encontrado==-1&&i<a.length;i++)
+		{
+			if(a[i]==dato)
+			{
+				encontrado=i;
+			}
+		}
+		return encontrado;
+	}
+	public static int busquedaBin(int[]a,int dato)
+	{
+		int inicio=0, fin=a.length-1, med=(inicio+fin)/2, encontrado=-1;
+		while(inicio<=fin&&encontrado==-1)
+		{
+			if(a[med]==dato)
+			{
+				encontrado=med;
+			}
+			else if(a[med]>dato)
+			{
+				fin=med-1;
+			}
+			else
+			{
+				inicio=med+1;
+			}
+			med=(inicio+fin)/2;
+		}
+		return encontrado;
+	}
+	
+
 	
 }
