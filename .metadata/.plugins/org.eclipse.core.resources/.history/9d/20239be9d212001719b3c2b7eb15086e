@@ -29,6 +29,8 @@ package ligaFutbol;
  * 		Leer y validar reiniciar
  * Fin
  * 				
+ * 
+ * 
  */
 
 public class MAIN {

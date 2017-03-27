@@ -1,0 +1,53 @@
+package ligaFutbol;
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * - Identificador, entero consultable
+ * - Nombre, String consultable
+ * - Puntos, entero consultable y modificable
+ * - partidosJugados, entero consultable y modificable
+ * - golesMarcados, entero consultable y modificableç
+ * - golesRecibidos, entero consultable y modificable
+ *
+ * Propiedades derivadas:
+ * 
+ * - diferenciaGoles, entero consultable
+ * 
+ * Propiedades compartidas:
+ * 
+ * - contador, entero consultable
+ * 
+ * Métodos consultables y modificadores:
+ * 
+ * int getIdentificador()
+ * String getNombre()
+ * void setPuntos(int puntos)
+ * int getPuntos()
+ * int getPartidosJugados()
+ * void setPartidosJugados(int partidosJugados)
+ * int getGolesMarcados()
+ * void setGolesMarcados(int golesMarcados)
+ * int getGolesRecibidos()
+ * void setgolesRecibidos(int golesRecibidos)
+ * int getDiferenciaGoles()
+ * 
+ * 
+ * Métodos añadidos:
+ * 
+ * 
+ */
+public enum Equipo {
+	
+	LEICESTER("Leicester",0,0,0,0), BAYERN("Bayern de Munich",0,0,0,0), MANCITY("Manchester City",0,0,0,0), JUVENTUS("Juventus",0,0,0,0)
+	
+	private String nombre;
+	private int puntos;
+	private int partidosJugados;
+	private int golesMarcados;
+	private int golesRecibidos;
+	private int identificador;
+	private static int contador;
+
+}
