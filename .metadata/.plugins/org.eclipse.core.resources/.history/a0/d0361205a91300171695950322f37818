@@ -1,0 +1,134 @@
+package ligaFutbol;
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * -equipoLocal, String consultable y modificable
+ * -equipoVisitante, String consultable y modificable
+ * -GolesLocal, Entero consultable y modificable
+ * -GolesVisitante, Entero consultable
+ * 
+ * Propiedades derivadas:
+ * - No hay
+ * Propiedades compartidas:
+ * - No hay
+ * 
+ * Métodos consultores y modificadores:
+ * 
+ * String getNombreLocal()
+ * void setEquipoLocal(String equipoLocal)
+ * 
+ * String getEquipoVisitante()
+ * void setEquipoVisitante(String equipoVisitante)
+ * 
+ * int getGolesLocal()
+ * void setGolesLocal(int golesLocal)
+ * 
+ * int getGolesVisitante()
+ * void setGolesVisitante(int golesvisitante)
+ * 
+ * Métodos añadidos:
+ * 
+ *
+ * 
+ */
+
+import java.util.Objects;
+
+public class Partido {
+	
+	private String equipoLocal;
+	private String equipoVisitante;
+	private int golesLocal;
+	private int golesVisitante;
+	
+	//Constructores
+	//Vacío
+	public Partido() 
+	{
+		
+		equipoLocal=" ";
+		equipoVisitante=" ";
+		golesLocal=0;
+		golesVisitante=0;
+	}
+	//Por parámetros
+	public Partido(String equipoLocal, String equipoVisitante, int golesLocal, int golesVisitante)
+	{
+		this.equipoLocal=equipoLocal;
+		this.equipoVisitante=equipoVisitante;
+		this.golesLocal=golesLocal;
+		this.golesVisitante=golesVisitante;
+	}
+	//De copia
+	public Partido(Partido partido)
+	{
+		this.equipoLocal=partido.equipoLocal;
+		this.equipoVisitante=partido.equipoVisitante;
+		this.golesLocal=partido.golesLocal;
+		this.golesVisitante=partido.golesVisitante;
+	}
+	//Métodos consultores y modificadores
+	public String getEquipoLocal() 
+	{
+		return equipoLocal;
+	}
+	public void setEquipoLocal(String equipoLocal) 
+	{
+		this.equipoLocal = equipoLocal;
+	}
+	public String getEquipoVisitante() 
+	{
+		return equipoVisitante;
+	}
+	public void setEquipoVisitante(String equipoVisitante) 
+	{
+		this.equipoVisitante = equipoVisitante;
+	}
+	public int getGolesLocal() 
+	{
+		return golesLocal;
+	}
+	public void setGolesLocal(int golesLocal) 
+	{
+		this.golesLocal = golesLocal;
+	}
+	public int getGolesVisitante() 
+	{
+		return golesVisitante;
+	}
+	public void setGolesVisitante(int golesVisitante) 
+	{
+		this.golesVisitante = golesVisitante;
+	}
+	//Métodos sobrecargados y sobreescritos
+	@Override
+	public String toString() 
+	{
+		return equipoLocal + ", " + equipoVisitante + ", "
+				+ golesLocal + ", " + golesVisitante;
+	}
+	@Override
+	public int hashCode() 
+	{
+		return Objects.hash(equipoLocal,equipoVisitante,golesLocal,golesVisitante);
+	}
+	@Override
+	public boolean equals(Object x) 
+	{
+		boolean igual=false;
+		if(x!=null && x instanceof Partido)
+		{
+			Partido partido=(Partido)x;
+			if(this.equipoLocal==partido.equipoLocal&&this.equipoVisitante==partido.equipoVisitante)
+			{
+				igual=true;
+			}
+		}
+		return igual;
+	}
+	
+	
+
+}

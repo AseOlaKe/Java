@@ -1,0 +1,169 @@
+package ligaFutbol;
+
+import java.util.Objects;
+
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * - Identificador, entero consultable
+ * - Nombre, String consultable y modificable
+ * - Puntos, entero consultable y modificable
+ * - partidosJugados, entero consultable y modificable
+ * - golesMarcados, entero consultable y modificable
+ * - golesRecibidos, entero consultable y modificable
+ * - posicion, entero consultable
+ *
+ * Propiedades derivadas:
+ * 
+ * - diferenciaGoles, entero consultable
+ * 
+ * Propiedades compartidas:
+ * 
+ * - contador, entero consultable
+ * 
+ * Métodos consultables y modificadores:
+ * 
+ * int getIdentificador()
+ * String getNombre()
+ * void setNombre(String nombre)
+ * void setPuntos(int puntos)
+ * int getPuntos()
+ * int getPartidosJugados()
+ * void setPartidosJugados(int partidosJugados)
+ * int getGolesMarcados()
+ * void setGolesMarcados(int golesMarcados)
+ * int getGolesRecibidos()
+ * void setgolesRecibidos(int golesRecibidos)
+ * int getDiferenciaGoles()
+ * 
+ * 
+ * Métodos añadidos:
+ * 
+ * 
+ */
+public class Equipo {
+	
+	private String nombre;
+	private int puntos;
+	private int partidosJugados;
+	private int golesMarcados;
+	private int golesRecibidos;
+	private int identificador;
+	private static int contador;
+	private int posicion;
+	
+	//Constructores
+	//Vacío
+	public Equipo ()
+	{
+		nombre="Default";
+		puntos=0;
+		partidosJugados=0;
+		golesMarcados=0;
+		golesRecibidos=0;
+		identificador=contador;
+		contador++;
+		posicion=0;
+	}
+	//Por parámetros
+	public Equipo(String nombre, int puntos, int partidosJugados, int golesMarcados, int golesRecibidos, int posicion)
+	{
+		this.nombre=nombre;
+		this.puntos=puntos;
+		this.partidosJugados=partidosJugados;
+		this.golesMarcados=golesMarcados;
+		this.golesRecibidos=golesRecibidos;
+		this.identificador=contador;
+		this.posicion=posicion;
+		contador++;
+	}
+	//De copia
+	public Equipo(Equipo equipo)
+	{
+		this.nombre=equipo.nombre;
+		this.puntos=equipo.puntos;
+		this.partidosJugados=equipo.partidosJugados;
+		this.golesMarcados=equipo.golesMarcados;
+		this.golesRecibidos=equipo.golesRecibidos;
+		this.identificador=equipo.identificador;
+		this.posicion=equipo.posicion;
+	}
+	//Métodos modificadores y consultores
+	public int getIdentificador()
+	{
+		return identificador;
+	}
+	public void setNombre(String nombre)
+	{
+		this.nombre=nombre;
+	}
+	public String getNombre()
+	{
+		return nombre;
+	}
+	public void setPuntos(int puntos)
+	{
+		this.puntos=puntos;
+	}
+	public int getPuntos()
+	{
+		return puntos;
+	}
+	public void setPartidosJugados(int partidosJugados)
+	{
+		this.partidosJugados=partidosJugados;
+	}
+	public int getPartidosJugados()
+	{
+		return partidosJugados;
+	}
+	public void setGolesMarcados(int golesMarcados)
+	{
+		this.golesMarcados=golesMarcados;
+	}
+	public int getGolesMarcados()
+	{
+		return golesMarcados;
+	}
+	public void setGolesRecibidos(int golesRecibidos)
+	{
+		this.golesRecibidos=golesRecibidos;
+	}
+	public int getGolesRecibidos() 
+	{
+		return golesRecibidos;
+	}
+	public int getPosicion() 
+	{
+		return posicion;
+	}
+	public int getDiferenciaDeGoles()
+	{
+		return golesMarcados-golesRecibidos;
+	}
+	//Métodos sobrecargados y sobreescritos
+	@Override
+	public int hashCode() 
+	{
+		
+		return Objects.hash(identificador,nombre,golesMarcados,golesRecibidos,puntos,partidosJugados,posicion);
+	}
+	//Criterio igualdad: Dos objetos serán iguales si están tienen los mismos puntos y tienen la misma diferencia de goles
+	@Override
+	public boolean equals(Object x) 
+	{
+		boolean igual=false;
+		if(x!=null && x instanceof Equipo)
+		{
+			Equipo equipo= (Equipo)x;
+			if(this.puntos==equipo.puntos&&)
+			{
+				igual=true;
+			}
+		}
+		return igual;
+	}
+	
+}

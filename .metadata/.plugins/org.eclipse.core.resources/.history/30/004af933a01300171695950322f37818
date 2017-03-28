@@ -1,0 +1,12 @@
+package ligaFutbol;
+/*
+ * 
+ */
+
+public class Partido {
+
+	public Partido() {
+		
+	}
+
+}

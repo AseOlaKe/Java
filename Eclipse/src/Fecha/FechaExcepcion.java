@@ -3,13 +3,14 @@
  * 
  */
 package Fecha;
-import java.lang.*;
+
 public class FechaExcepcion extends Exception {
 	
-	
+	private static final long serialVersionUID = 1L;
+
 	public FechaExcepcion(String mensaje)
 	{
-		System.out.println(mensaje);
+		super(mensaje);
 	}
 
 }

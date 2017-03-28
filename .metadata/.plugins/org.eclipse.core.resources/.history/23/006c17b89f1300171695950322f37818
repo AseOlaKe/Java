@@ -1,0 +1,9 @@
+package ligaFutbol;
+
+public class Partido {
+
+	public Partido() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

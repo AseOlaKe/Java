@@ -1,0 +1,15 @@
+package ligaFutbol;
+
+public class TestPartido {
+
+	public static void main(String[] args) {
+		
+		Equipo sevilla=new Equipo("Sevilla",0,0,0,0,0);
+		Equipo betis= new Equipo("Betis",0,0,0,0,0);
+		Equipo alaves=new Equipo("Alaves",0,0,0,0,0);
+		Equipo deportivo=new Equipo("Depotivo",0,0,0,0,0);
+		
+
+	}
+
+}

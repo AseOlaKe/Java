@@ -1,0 +1,11 @@
+package ligaFutbol;
+
+public class ligaException extends Exception{
+	
+	public ligaException(String mensaje)
+	{
+		super.
+	}
+
+
+}

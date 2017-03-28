@@ -1,0 +1,103 @@
+package ligaFutbol;
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * -NombreLocal, String consultable y modificable
+ * -NombreVisitante, String consultable y modificable
+ * -GolesLocal, Entero consultable y modificable
+ * -GolesVisitante, Entero consultable
+ * 
+ * Propiedades derivadas:
+ * - No hay
+ * Propiedades compartidas:
+ * - No hay
+ * 
+ * Métodos consultores y modificadores:
+ * 
+ * String getNombreLocal()
+ * void setNombreLocal(String nombreLocal)
+ * 
+ * String getNombrevisitante()
+ * void setNombreVisitante(String nombreVisitante)
+ * 
+ * int getGolesLocal()
+ * void setGolesLocal(int golesLocal)
+ * 
+ * int getGolesVisitante()
+ * void setGolesVisitante(int golesvisitante)
+ * 
+ * Métodos añadidos:
+ * 
+ *
+ * 
+ */
+
+public class Partido {
+	
+	private String nombreLocal;
+	private String nombreVisitante;
+	private int golesLocal;
+	private int golesVisitante;
+	
+	//Constructores
+	//Vacío
+	public Partido() 
+	{
+		
+		nombreLocal=" ";
+		nombreVisitante=" ";
+		golesLocal=0;
+		golesVisitante=0;
+	}
+	//Por parámetros
+	public Partido(String nombreLocal, String nombreVisitante, int golesLocal, int golesVisitante)
+	{
+		this.nombreLocal=nombreLocal;
+		this.nombreVisitante=nombreVisitante;
+		this.golesLocal=golesLocal;
+		this.golesVisitante=golesVisitante;
+	}
+	//De copia
+	public Partido(Partido partido)
+	{
+		this.nombreLocal=partido.nombreLocal;
+		this.nombreVisitante=partido.nombreVisitante;
+		this.golesLocal=partido.golesLocal;
+		this.golesVisitante=partido.golesVisitante;
+	}
+	//Métodos consultores y modificadores
+	public String getNombreLocal() 
+	{
+		return nombreLocal;
+	}
+	public void setNombreLocal(String nombreLocal) {
+		this.nombreLocal = nombreLocal;
+	}
+	public String getNombreVisitante() 
+	{
+		return nombreVisitante;
+	}
+	public void setNombreVisitante(String nombreVisitante) 
+	{
+		this.nombreVisitante = nombreVisitante;
+	}
+	public int getGolesLocal() {
+		return golesLocal;
+	}
+	public void setGolesLocal(int golesLocal) 
+	{
+		this.golesLocal = golesLocal;
+	}
+	public int getGolesVisitante() {
+		return golesVisitante;
+	}
+	public void setGolesVisitante(int golesVisitante) 
+	{
+		this.golesVisitante = golesVisitante;
+	}
+	//Métodos sobrecargados y sobreescritos
+	
+
+}
