@@ -54,7 +54,7 @@ public class MAIN
 		
 		
 		Equipo sevilla=null;
-		Equipo juventus=null;
+		Equipo leicester=null;
 		Equipo zagreb=null;
 		Equipo lyon=null;
 		Partido partido1=null;
@@ -63,7 +63,7 @@ public class MAIN
 		try
 		{
 			sevilla=new Equipo("Sevilla FC",0,0,0,0,0);
-			juventus=new Equipo("Juventus FC",0,0,0,0,0);
+			leicester=new Equipo("Leicester FC",0,0,0,0,0);
 			zagreb=new Equipo("Dinamo de Zagreb",0,0,0,0,0);
 			lyon=new Equipo("Olympique de Lyon",0,0,0,0,0);
 			partido1=new Partido();
@@ -82,13 +82,7 @@ public class MAIN
 		}while(!seguir.equals("si")&&!seguir.equals("no"));
 		while(seguir.equals("si"))
 		{
-			gestora.cargarArray(sevilla, juventus, zagreb, lyon);
-			
-			do
-			{
-				System.out.println("Desea reiniciar la liguilla?");
-				seguir=tecladoString.readLine().toLowerCase();
-			}while(!seguir.equals("si")&&!seguir.equals("no"));
+			gestora.cargarArray(sevilla, leicester, zagreb, lyon);
 		}
 	}
 

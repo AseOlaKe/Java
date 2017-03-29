@@ -84,11 +84,6 @@ public class MAIN
 		{
 			gestora.cargarArray(sevilla, juventus, zagreb, lyon);
 			
-			do
-			{
-				System.out.println("Desea reiniciar la liguilla?");
-				seguir=tecladoString.readLine().toLowerCase();
-			}while(!seguir.equals("si")&&!seguir.equals("no"));
 		}
 	}
 
