@@ -317,7 +317,7 @@ public class GestoraLiga
 	public int buscarNumero(int numero, int[]array)
 	{
 		int i, encontrado=-1;
-		for(i=0;encontrado==-1&&i<array.length;i++)
+		for(i=0;encontrado==-1&&i<clasificacion.length;i++)
 		{
 			if(array[i]==numero)
 			{

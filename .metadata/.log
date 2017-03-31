@@ -1098,3 +1098,9 @@ org.eclipse.userstorage.util.ProtocolException: POST https://api.eclipse.org/api
 	at org.eclipse.oomph.setup.internal.sync.Synchronizer.synchronize(Synchronizer.java:103)
 	at org.eclipse.oomph.setup.internal.sync.SynchronizerJob.run(SynchronizerJob.java:144)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.jface.text 2 0 2017-03-31 10:10:48.625
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-03-31 10:10:48.625
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

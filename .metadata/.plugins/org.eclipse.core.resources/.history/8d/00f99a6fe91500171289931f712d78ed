@@ -317,7 +317,7 @@ public class GestoraLiga
 	public int buscarNumero(int numero, int[]array)
 	{
 		int i, encontrado=-1;
-		for(i=0;encontrado==-1&&i<array.length;i++)
+		for(i=0;encontrado==-1&&i<clasificacion.length;i++)
 		{
 			if(array[i]==numero)
 			{
@@ -438,28 +438,10 @@ public class GestoraLiga
 	 */
 	public void imprimirResultados(Partido partido1, Partido partido2)
 	{
-		System.out.println();
 		System.out.println("RESULTADOS");
 		System.out.println();
 		System.out.println(partido1.getEquipoLocal().getNombre()+" "+partido1.getGolesLocal()+" - "+partido1.getEquipoVisitante().getNombre()+" "+partido1.getGolesVisitante());
 		System.out.println(partido2.getEquipoLocal().getNombre()+" "+partido2.getGolesLocal()+" - "+partido2.getEquipoVisitante().getNombre()+" "+partido2.getGolesVisitante());
 		System.out.println();
 	}
-	/*
-	 *Interfaz
-	 *
-	 * Este método imprime los resultados de la jornada
-	 * Prototipo: void imprimirResultados(Partido partido1,Partido partido2)
-	 * Precondiciones: No hay
-	 * Entradas: Dos objetos partido
-	 * Salidas: Nada
-	 * Postcondiciones: No hay
-	 * 
-	 * RESGUARDO
-	 * 
-	 * public void imprimirResultados(Partido partido1,Partido partido2)
-	 * {
-	 * 		System.out.println("EN CONSTRUCCION");
-	 * }
-	 */
 }

@@ -133,7 +133,6 @@ public class MAIN
 						Thread.sleep(1500);
 						gestora.generarResultados(partido1, partido2);
 						gestora.imprimirResultados(partido1, partido2);
-						
 					break;
 					case 2:
 						gestora.imprimirClasificacion();
