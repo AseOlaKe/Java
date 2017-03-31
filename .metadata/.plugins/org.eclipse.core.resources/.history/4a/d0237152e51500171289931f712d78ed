@@ -82,13 +82,6 @@ public class Partido implements Cloneable, Comparable<Partido> {
 		this.golesVisitante=partido.golesVisitante;
 	}
 	//Métodos consultores y modificadores
-	
-	public void setEquipoLocal(Equipo equipoLocal) {
-		this.equipoLocal = equipoLocal;
-	}
-	public void setEquipoVisitante(Equipo equipoVisitante) {
-		this.equipoVisitante = equipoVisitante;
-	}
 	public Equipo getEquipoLocal() 
 	{
 		return equipoLocal;
@@ -131,9 +124,9 @@ public class Partido implements Cloneable, Comparable<Partido> {
 	@Override
 	public String toString() 
 	{
-		return equipoLocal + ", " + equipoVisitante + ", "+ golesLocal + ", " + golesVisitante;
+		return equipoLocal + ", " + equipoVisitante + ", "
+				+ golesLocal + ", " + golesVisitante;
 	}
-	
 	@Override
 	public int hashCode() 
 	{
