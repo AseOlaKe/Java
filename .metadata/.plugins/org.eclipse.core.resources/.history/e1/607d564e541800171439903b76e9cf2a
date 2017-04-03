@@ -139,6 +139,7 @@ public class GestoraLiga
 		{
 			System.out.println("------------------------------------------------------------");
 			System.out.println("|   "+contador+"   |   "+clasificacion[i].getNombre().substring(0,3)+"   |   "+clasificacion[i].getPuntos()+"   |   "+clasificacion[i].getPartidosJugados()+"   |   "+clasificacion[i].getGolesMarcados()+"   |   "+clasificacion[i].getGolesRecibidos()+"   |   "+clasificacion[i].getDiferenciaDeGoles()+"   |");
+			System.out.println();
 			contador++;
 		}
 		System.out.println("------------------------------------------------------------");
@@ -367,19 +368,19 @@ public class GestoraLiga
 	 * 		System.out.println("EN CONSTRUCCION");
 	 * }
 	 */
-	public void generarResultados(Partido partido) //Hacerlo con probabilidades
+	public void generarResultados(Partido partido1, Partido partido2)
 	{
 		int numero=0;
 		Random aleatorio=new Random();
 		int contador;
-		for(contador=0;contador<2;contador++)
+		for(contador=0;contador<4;contador++)
 		{
 			numero=aleatorio.nextInt(5);
 			if(contador==0)
 			{
 				try
 				{
-					partido.setGolesLocal(numero);
+					partido1.setGolesLocal(numero);
 				}catch(ligaException mensaje)
 				{
 					System.out.println(mensaje);
@@ -389,7 +390,27 @@ public class GestoraLiga
 			{
 				try
 				{
-					partido.setGolesVisitante(numero);
+					partido1.setGolesVisitante(numero);
+				}catch(ligaException mensaje)
+				{
+					System.out.println(mensaje);
+				}
+			}
+			else if(contador==2)
+			{
+				try
+				{
+					partido2.setGolesLocal(numero);
+				}catch(ligaException mensaje)
+				{
+					System.out.println(mensaje);
+				}
+			}
+			else
+			{
+				try
+				{
+					partido2.setGolesVisitante(numero);
 				}catch(ligaException mensaje)
 				{
 					System.out.println(mensaje);
@@ -441,60 +462,5 @@ public class GestoraLiga
 	 * 		System.out.println("EN CONSTRUCCION");
 	 * }
 	 */
-	public void gestionarPartidos(Partido partido)
-	{
-		if(partido.getGolesLocal()==partido.getGolesVisitante())
-		{
-			try
-			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoLocal().setPuntos(1+partido.getEquipoLocal().getPuntos());
-				partido.getEquipoVisitante().setPuntos(1+partido.getEquipoVisitante().getPuntos());
-				
-			}catch(ligaException mensaje)
-			{
-				System.out.println(mensaje);
-			}
-		}
-		else if(partido.getGolesLocal()>partido.getGolesVisitante())
-		{
-			try
-			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoLocal().setPuntos(3+partido.getEquipoLocal().getPuntos());
-				
-			}catch(ligaException mensaje)
-			{
-				System.out.println(mensaje);
-			}
-		}
-		else
-		{
-			try
-			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoVisitante().setPuntos(3+partido.getEquipoVisitante().getPuntos());
-				
-			}catch(ligaException mensaje)
-			{
-				System.out.println(mensaje);
-			}
-		}
-		Arrays.sort(clasificacion);
-	}
+	public void gestionarPartidos(Partido partido1)
 }

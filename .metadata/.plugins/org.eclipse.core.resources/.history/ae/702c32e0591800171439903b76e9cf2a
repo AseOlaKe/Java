@@ -367,7 +367,7 @@ public class GestoraLiga
 	 * 		System.out.println("EN CONSTRUCCION");
 	 * }
 	 */
-	public void generarResultados(Partido partido) //Hacerlo con probabilidades
+	public void generarResultados(Partido partido)
 	{
 		int numero=0;
 		Random aleatorio=new Random();

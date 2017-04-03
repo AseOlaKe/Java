@@ -139,6 +139,7 @@ public class GestoraLiga
 		{
 			System.out.println("------------------------------------------------------------");
 			System.out.println("|   "+contador+"   |   "+clasificacion[i].getNombre().substring(0,3)+"   |   "+clasificacion[i].getPuntos()+"   |   "+clasificacion[i].getPartidosJugados()+"   |   "+clasificacion[i].getGolesMarcados()+"   |   "+clasificacion[i].getGolesRecibidos()+"   |   "+clasificacion[i].getDiferenciaDeGoles()+"   |");
+			System.out.println();
 			contador++;
 		}
 		System.out.println("------------------------------------------------------------");
@@ -367,7 +368,7 @@ public class GestoraLiga
 	 * 		System.out.println("EN CONSTRUCCION");
 	 * }
 	 */
-	public void generarResultados(Partido partido) //Hacerlo con probabilidades
+	public void generarResultados(Partido partido)
 	{
 		int numero=0;
 		Random aleatorio=new Random();
@@ -443,58 +444,16 @@ public class GestoraLiga
 	 */
 	public void gestionarPartidos(Partido partido)
 	{
-		if(partido.getGolesLocal()==partido.getGolesVisitante())
+		if(partido.getGolesLocal()>partido.getGolesVisitante())
 		{
 			try
 			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoLocal().setPuntos(1+partido.getEquipoLocal().getPuntos());
-				partido.getEquipoVisitante().setPuntos(1+partido.getEquipoVisitante().getPuntos());
-				
+				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal());
+				partido.getEquipoLocal().setPuntos(3);
 			}catch(ligaException mensaje)
 			{
 				System.out.println(mensaje);
 			}
 		}
-		else if(partido.getGolesLocal()>partido.getGolesVisitante())
-		{
-			try
-			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoLocal().setPuntos(3+partido.getEquipoLocal().getPuntos());
-				
-			}catch(ligaException mensaje)
-			{
-				System.out.println(mensaje);
-			}
-		}
-		else
-		{
-			try
-			{
-				partido.getEquipoLocal().setGolesMarcados(partido.getGolesLocal()+partido.getEquipoLocal().getGolesMarcados());
-				partido.getEquipoLocal().setGolesRecibidos(partido.getGolesVisitante()+partido.getEquipoLocal().getGolesRecibidos());
-				partido.getEquipoVisitante().setGolesMarcados(partido.getGolesVisitante()+partido.getEquipoVisitante().getGolesMarcados());
-				partido.getEquipoVisitante().setGolesRecibidos(partido.getGolesLocal()+partido.getEquipoVisitante().getGolesRecibidos());
-				partido.getEquipoLocal().setPartidosJugados(1+partido.getEquipoLocal().getPartidosJugados());
-				partido.getEquipoVisitante().setPartidosJugados(1+partido.getEquipoVisitante().getPartidosJugados());
-				partido.getEquipoVisitante().setPuntos(3+partido.getEquipoVisitante().getPuntos());
-				
-			}catch(ligaException mensaje)
-			{
-				System.out.println(mensaje);
-			}
-		}
-		Arrays.sort(clasificacion);
 	}
 }

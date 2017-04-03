@@ -248,11 +248,11 @@ public class Equipo implements Cloneable, Comparable<Equipo>{
 	public int compareTo(Equipo equipo)
 	{
 		int compara=0;
-		if((this.puntos<equipo.puntos)||((this.puntos==equipo.puntos)&&(getDiferenciaDeGoles()<equipo.getDiferenciaDeGoles())))
+		if((this.puntos>equipo.puntos)||((this.puntos==equipo.puntos)&&(getDiferenciaDeGoles()>equipo.getDiferenciaDeGoles())))
 		{
 			compara=1;
 		}
-		else if((this.puntos>equipo.puntos)||((this.puntos==equipo.puntos)&&(getDiferenciaDeGoles()>equipo.getDiferenciaDeGoles())))
+		else if((this.puntos<equipo.puntos)||((this.puntos==equipo.puntos)&&(getDiferenciaDeGoles()<equipo.getDiferenciaDeGoles())))
 		{
 			compara=-1;
 		}

@@ -14,28 +14,35 @@ package ligaFutbol;
  * PSEUDOCÓDIGO GENERALIZADO
  * 
  * Inicio
- * 		Cargar Array Liga
- * 		Presentar menú y leer y valdiar opcion
- * 		Mientras opcion!=0
+ * 		Leer y validar iniciar liga
+ * 		Mientras quiera iniciar liga
+ * 			Presentar menú y leer y valdiar opcion
+ * 			Mientras opcion!=0
 	 * 			Segun(opcion)
 	 * 				Caso 1:
 	 * 					Simular jornada
+	 * 					Llamar al tito Floren
 	 * 				Caso 2:
 	 * 					Imprimir tabla de clasificación
 	 * 			Fin_Segun
-	 * 			Presentar menu y leer y validar opcion
 	 * 		Fin_Mientras
+ * 			Leer y validar reiniciar
+ * 		Fin_Mientras
  * Fin
  * 	
  * ---Módulo Simular jornada---
  * Inicio
- * 		Generar Jornada
- * 		Imprimir Jornada
- *		Generar resultados 
- *		Imprimir resultados
- *		Aplicar resultados de los partidos a los equipos
+ * 		Generar e imprimir Jornada
+ *		Generar resultados e imprimir resultados
  * Fin
- * 	
+ * 
+ * ---Módulo Llamar al tito Floren---
+ * Inicio
+ * 		Imprimir resultados
+ * 		Leer y validar elegir partido
+ * 		Leer y validar nuevo resultado
+ * 		Imprimir resultados
+ * Fin			
  */
 
 import java.io.*;
@@ -76,6 +83,7 @@ public class MAIN
 	public static void main (String[]args) throws IOException, InterruptedException
 	{
 		int opcion=0;
+		String seguir=" ";
 		Equipo sevilla=null;
 		Equipo juventus=null;
 		Equipo zagreb=null;
@@ -99,10 +107,7 @@ public class MAIN
 		BufferedReader tecladoString=new BufferedReader(corriente);
 		Scanner teclado=new Scanner (System.in);
 			System.out.println("Bienvenidos al Grupo H de la UEFA Champions League!");
-			//Cargar array liga
 			gestora.cargarArray(sevilla, juventus, zagreb, lyon);
-			//Fin cargar array liga
-			//Presentar menu y leer y validar opcion
 			do
 			{
 				presentarMenu();
@@ -116,40 +121,27 @@ public class MAIN
 					teclado=new Scanner(System.in);
 				}
 			}while(opcion<0||opcion>2);
-			//Fin presentar menu y leer y validar opcion
 			while(opcion!=0)
-			{	//Según la opcion elegida
+			{
 				switch(opcion)
 				{
 					case 1:
-						//Generar Jornada
 						gestora.generarEnfrentamientos(partido1, partido2, sevilla, juventus, zagreb, lyon);
-						//Fin generar jornada
-						//Imprimir jornada
 						gestora.imprimirEnfrentamientos(partido1, partido2);
-						//Fin imprimir jornada
 						Thread.sleep(1500);
 						System.out.println("Generando resultados...");
 						Thread.sleep(1500);
-						//Generar resultados
 						gestora.generarResultados(partido1);
 						gestora.generarResultados(partido2);
-						//fin generar resultados
-						//Imprimir resultados
 						gestora.imprimirResultados(partido1, partido2);
-						//Fin imprimir resultados
-						//Aplicar resultados de los partidos a los equipos
 						gestora.gestionarPartidos(partido1);
 						gestora.gestionarPartidos(partido2);
-						//Fin aplicar
+						
 					break;
 					case 2:
-						//Imprimir clasificacion
 						gestora.imprimirClasificacion();
-						//Fin imprimir clasificacion
 					break;
 				}
-				//Presentar menu y leer y validar opcion
 				do
 				{
 					presentarMenu();
@@ -163,7 +155,6 @@ public class MAIN
 						teclado=new Scanner(System.in);
 					}
 				}while(opcion<0||opcion>2);
-				//Fin presentar menu y leer y validar opcion
 			}
 		}
 	}

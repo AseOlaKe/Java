@@ -139,6 +139,7 @@ public class GestoraLiga
 		{
 			System.out.println("------------------------------------------------------------");
 			System.out.println("|   "+contador+"   |   "+clasificacion[i].getNombre().substring(0,3)+"   |   "+clasificacion[i].getPuntos()+"   |   "+clasificacion[i].getPartidosJugados()+"   |   "+clasificacion[i].getGolesMarcados()+"   |   "+clasificacion[i].getGolesRecibidos()+"   |   "+clasificacion[i].getDiferenciaDeGoles()+"   |");
+			System.out.println();
 			contador++;
 		}
 		System.out.println("------------------------------------------------------------");
@@ -367,7 +368,7 @@ public class GestoraLiga
 	 * 		System.out.println("EN CONSTRUCCION");
 	 * }
 	 */
-	public void generarResultados(Partido partido) //Hacerlo con probabilidades
+	public void generarResultados(Partido partido)
 	{
 		int numero=0;
 		Random aleatorio=new Random();
