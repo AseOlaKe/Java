@@ -217,7 +217,7 @@ public class Equipo implements Cloneable, Comparable<Equipo>{
 		if(x!=null && x instanceof Equipo)
 		{
 			Equipo equipo= (Equipo)x;
-			if(this.nombre==equipo.getNombre())
+			if(this.puntos==equipo.puntos&&getDiferenciaDeGoles()==equipo.getDiferenciaDeGoles())
 			{
 				igual=true;
 			}

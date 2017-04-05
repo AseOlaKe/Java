@@ -1,0 +1,27 @@
+package pruebasFicheros;
+import java.io.*;
+public class Prueba {
+
+	public static void main(String[] args) 
+	{
+		String ruta=".\\src\\pruebasFicheros\\prueba.txt";
+		File archivo=new File(ruta);
+		try 
+		{
+			FileWriter fw=new FileWriter(ruta);
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		if(archivo.exists())
+		{
+			System.out.println("Existe");
+		}
+		else
+		{
+			System.out.println("no existe");
+		}
+		
+	}
+
+}
