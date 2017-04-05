@@ -1,0 +1,21 @@
+package pruebaFicheros2;
+import java.io.*;
+public class Prueba2 {
+
+	public static void main(String[] args) {
+		
+		String ruta=".\\src\\pruebaFichero2\\prueba2.txt";
+		FileWriter fw;
+		FileReader fr;
+		try
+		{
+			fw=new FileWriter(ruta);
+			fr=new FileReader(ruta);
+		}catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+
+	}
+
+}
