@@ -1,0 +1,42 @@
+package pruebaFicheros2;
+import java.io.*;
+public class Prueba2 {
+
+	public static void main(String[] args) {
+		
+		String ruta=".\\src\\pruebaFichero2\\prueba2.txt";
+		FileWriter fw=null;
+		FileReader fr = null;
+		BufferedReader bf=null;
+		String linea;
+		try
+		{
+			bf=new BufferedReader(fr);
+			fw=new FileWriter(ruta);
+			fr=new FileReader(ruta);
+			linea=bf.readLine();
+			fw.close();
+			int valor=fr.read();
+			while(valor!=1)
+			{
+				System.out.println((char)valor);
+				valor=fr.read();
+			}
+		}catch(IOException e)
+		{
+			e.printStackTrace();
+		}finally{
+			
+			try 
+			{
+				if(fr!=null)
+					fr.close();
+			} catch (IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+		}
+
+	}
+
+}

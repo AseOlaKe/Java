@@ -4,36 +4,39 @@ public class Prueba {
 
 	public static void main(String[] args) 
 	{
-		int valor;
+		//int valor;
 		String ruta=".\\src\\pruebasFicheros\\prueba.txt";
-		//File archivo=new File(ruta);
+		String linea;
+		String linea2;
+		File archivo=new File(ruta);
 		FileWriter fw=null;
 		FileReader fr=null;
+		BufferedReader bf= null;
 		try 
 		{
-			 fw=new FileWriter(ruta);
-			 fw.write("Esto es una prueba");
-			 fw.write("pepe");
-			 fw.close();
+			
 			 fr=new FileReader(ruta);
-			 valor=fr.read();
-			 while(valor!=-1)
+			 bf=new BufferedReader(fr);
+			 linea= bf.readLine();
+			 while(linea!=null)
+			 {
+				 System.out.println(linea);
+				 linea=bf.readLine();
+			 }
+			 fr.close();
+			
+			 
+			 /*while(valor!=-1)
 			 {
 	         System.out.print((char)valor);
 	         valor=fr.read();
 			 }
-			 fr.close();
-			 fw=new FileWriter(ruta);
-			 fw.write("ivan maricona");
+			 fr.close();*/
+			 
+			 fw=new FileWriter(ruta,true);
+			 fw.write("\n ivan maricona");
 			 fw.close();
-			 fr=new FileReader(ruta);
-			 valor=fr.read();
-			 while(valor!=-1)
-			 {
-	         System.out.print((char)valor);
-	         valor=fr.read();
-			 }
-			 fr.close();
+			
 		} catch (IOException e) 
 		{
 			e.printStackTrace();
