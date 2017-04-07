@@ -1,0 +1,14 @@
+package ordenacionFicheros;
+
+public class UtilFicheros {
+	
+	/*
+	 * Interfaz
+	 * 
+	 * Este método crea un fichero
+	 * Prototipo
+	 */
+	
+	public void crearFichero()
+
+}

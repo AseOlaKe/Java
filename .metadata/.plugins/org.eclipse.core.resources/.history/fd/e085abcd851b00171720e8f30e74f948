@@ -1,0 +1,29 @@
+package ordenacionFicheros;
+
+import java.util.*;
+public class CompararadorEnteros{
+
+	
+	public int compareTo(String cadena, String cadena2)
+	{
+		int compara=0;
+		int numero=0;
+		if(cadena.compareTo(cadena2)==1)
+		{
+			compara=1;
+		}
+		else if (cadena.compareTo(cadena2)==-1)
+		{
+			compara=-1;
+		}
+		return compara;
+	}
+	/*public int compare(String cadena,String cadena1){
+		
+		int resultado=0;
+			
+		resultado=p1.getApellidos().compareTo(p2.getApellidos());
+		
+		return resultado;
+	}*/
+}

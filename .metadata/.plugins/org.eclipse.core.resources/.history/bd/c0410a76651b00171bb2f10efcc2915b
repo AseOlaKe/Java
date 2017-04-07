@@ -1,0 +1,61 @@
+package ordenacionFicheros;
+import java.io.*;
+public class CopiaFicheroDesordenado {
+
+	public static void main(String[] args) {
+		
+		String in=".\\src\\ordenacionFicheros\\ficheroAOrdenar.txt";
+		String out=".\\src\\ordenacionFicheros\\copiaDesordenado.txt";
+		File archivo=new File(out);
+		FileWriter fw= null;
+		FileReader fr=null;
+		BufferedReader br=null;
+		BufferedWriter bw=null;
+		String linea;
+		try
+		{
+			fw=new FileWriter(out);
+			fr=new FileReader(in);
+			bw=new BufferedWriter(fw);
+			br= new BufferedReader(fr);
+			linea=br.readLine();
+			while(linea!=null)
+			{
+				fw.write(linea);
+				bw.newLine();
+				linea=br.readLine();
+			}
+			
+		}catch(IOException e)
+		{
+			System.out.println("Error E/S: "+e);
+		}finally
+		{
+			try {
+				fw.close();
+			} catch (IOException e2) {
+				
+				e2.printStackTrace();
+			}
+			try {
+				fr.close();
+			} catch (IOException e1) {
+				
+				e1.printStackTrace();
+			}
+			try {
+				bw.close();
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
+			try {
+				br.close();
+			} catch (IOException e) {
+			
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

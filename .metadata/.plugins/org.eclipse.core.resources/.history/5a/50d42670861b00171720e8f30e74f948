@@ -1,0 +1,14 @@
+package ordenacionFicheros;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CopiaFicheroDesordenadoTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

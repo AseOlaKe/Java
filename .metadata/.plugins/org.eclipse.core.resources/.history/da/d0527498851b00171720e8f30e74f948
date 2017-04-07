@@ -1,0 +1,14 @@
+package ordenacionFicheros;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CompararadorEnterosTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
