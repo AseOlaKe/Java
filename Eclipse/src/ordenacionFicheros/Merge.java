@@ -3,7 +3,22 @@ import java.io.*;
 public class Merge {
 
 			   
-			
+				/*
+				 * Interfaz
+				 * 
+				 * Este método ejecuta el método de ordenación de mezcla directa
+				 * prototipo: void run()
+				 * Precondiciones: No hay
+				 * Entradas: No hay
+				 * Salidas: No hay
+				 * Postcondiciones: No hay
+				 * 
+				 * RESGUARDO
+				 * 
+				 * public  void run() {
+				 * 		System.out.println("EN CONSTRUCCION");
+				 * }
+				 */
 			   public  void run() {
 				   String INPUT= ".\\src\\ordenacionFicheros\\ficheroAOrdenar.txt" ;
 				   String AUX1  =  ".\\src\\ordenacionFicheros\\aux1.txt" ;
@@ -73,6 +88,22 @@ public class Merge {
 			     return sorted;
 			   }
 			
+			    /*
+			     * Interfaz
+			     * 
+			     * Este método mezcla dos ficheros en uno ordenadamente
+			     * Prototipo: void merge(String input1,String input2, String output)
+			     * Precondiciones: Las cadenas no están vacias
+			     * Entradas: 3 cadenas
+			     * Salida: No hay
+			     * Postcondiciones: No hay
+			     * 
+			     * RESGUARDO
+			     *  public void merge(String input1,String input2, String output) throws IOException {
+			     *  	System.out.println("EN CONSTRUCCION");
+			     *  }
+			     * 
+			     */
 			   public void merge(String input1,String input2, String output) throws IOException {
 			
 			     BufferedReader in1 = new BufferedReader(new FileReader(input1));
