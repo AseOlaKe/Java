@@ -54,8 +54,6 @@ public class UtilFicheros {
 		String linea2="";
 		try 
 		{
-			File winini1=new File(win);
-			File systemini1=new File(system);
 			BufferedReader winini = new BufferedReader(new FileReader(win));
 			BufferedReader systemini = new BufferedReader(new FileReader(system));
 			System.out.println("win.ini: ");
@@ -65,13 +63,6 @@ public class UtilFicheros {
 				System.out.println(linea1);
 				linea1=winini.readLine();
 			}
-			System.out.println("Nombre: "+winini1.getName());
-			System.out.println("Ultima modificacion: "+winini1.lastModified());
-			System.out.println("Ejecutable: "+winini1.canExecute());
-			System.out.println("Leible: "+winini1.canRead());
-			System.out.println("Se puede modificar: "+ winini1.canWrite());
-			System.out.println("Esta oculto: "+winini1.isHidden());
-			winini.close();
 			System.out.println();
 			System.out.println("system.ini: ");
 			linea2=systemini.readLine();
@@ -80,13 +71,6 @@ public class UtilFicheros {
 				System.out.println(linea2);
 				linea2=systemini.readLine();
 			}
-			System.out.println("Nombre: "+systemini1.getName());
-			System.out.println("Ultima modificacion: "+systemini1.lastModified());
-			System.out.println("Ejecutable: "+systemini1.canExecute());
-			System.out.println("Leible: "+systemini1.canRead());
-			System.out.println("Se puede modificar: "+ systemini1.canWrite());
-			System.out.println("Esta oculto: "+systemini1.isHidden());
-			systemini.close();
 		} catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();

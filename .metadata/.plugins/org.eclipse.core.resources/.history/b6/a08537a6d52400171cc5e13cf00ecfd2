@@ -1,0 +1,30 @@
+package utilFicheros;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class TestUtil {
+
+	public static void main(String[] args) {
+		BufferedReader tecladoString=new BufferedReader(new InputStreamReader(System.in));
+		UtilFicheros util= new UtilFicheros();
+		System.out.println("");
+		try {
+			String ruta1=tecladoString.readLine();
+			String ruta2=tecladoString.readLine();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+		try {
+			util.listarDirectorio();
+		} catch (UtilException e) {
+
+			e.printStackTrace();
+		}
+		util.fileProperties(args[0], args[1]);
+
+	}
+
+}

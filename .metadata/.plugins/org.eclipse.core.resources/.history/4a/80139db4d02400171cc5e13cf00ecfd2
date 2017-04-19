@@ -53,9 +53,7 @@ public class Merge {
 			    */
 			
 			    public boolean split(String input,String output1,String output2) throws IOException {
-			    
-			     File aux1=new File(output1);
-			     File aux2=new File(output2);
+			
 			     BufferedReader in = new BufferedReader(new FileReader(input)); 
 			     BufferedWriter out = new BufferedWriter(new FileWriter(output1));
 			     BufferedWriter other = new BufferedWriter(new FileWriter(output2));
@@ -82,14 +80,11 @@ public class Merge {
 			       previous = current;
 			       current = in.readLine();
 			     }
+			
 			     in.close();
 			     out.close();
 			     other.close();
-			     if(sorted)
-			     {
-			    	aux1.delete();
-			    	aux2.delete();
-			     }
+			
 			     return sorted;
 			   }
 			
