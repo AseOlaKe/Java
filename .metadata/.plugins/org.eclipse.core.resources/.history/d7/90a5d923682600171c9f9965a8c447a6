@@ -1,0 +1,13 @@
+package hospital;
+/*
+ * Clase dommicilio
+ * 
+ * Calle String, consultable y modificable
+ * Numero int, consultable y modificable
+ * Ciudad String, consultable y modificable
+ * 
+ * 
+ */
+public class Domicilio {
+
+}

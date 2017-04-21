@@ -1,0 +1,12 @@
+package hospital;
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * String nombre, consultable y modificable
+ * 
+ */
+public class Paciente {
+
+}
