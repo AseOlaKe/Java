@@ -1,0 +1,27 @@
+package hospital;
+/*
+ * Interfaz
+ * 
+ * Propiedades básicas:
+ * 
+ * nombre String, consultable y modificable
+ * 
+ * edad int, consultable y modificable
+ * sexo char, consultable y modificable
+ * domicilio Domicilio, consultable y modificable
+ * telefono int, consultable y modificable
+ * 
+ * Propiedades derivadas: No hay
+ * Propiedades compartidas: No hay
+ * 
+ * Métodos consultores y modificadores:
+ * 
+ * void setNombre(String nombre)
+ * void setEdad(int edad)
+ * void setSexo(char sexo)
+ * void setDomicilio(Domicilio d)
+ * void
+ */
+public class Paciente {
+
+}

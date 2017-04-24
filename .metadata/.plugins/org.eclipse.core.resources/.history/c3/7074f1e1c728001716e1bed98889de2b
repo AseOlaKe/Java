@@ -41,32 +41,10 @@ package hospital;
  * 
  * Métodos añadidos:
  * 
- * 	-boolean comprobarDNI()******
+ * 	-boolean comprobarDNI()
  */
-public class Paciente implements Comparable<Paciente>, Cloneable
-{
-	private String nombre;
-	private int edad;
-	private String dni;
-	private char sexo;
-	private Domicilio domicilio;
-	private int telefono;
-	private String seguroPrivado;
+public class Paciente {
 	
-	public Paciente()
-	{
-		nombre="";
-		edad=1;
-		dni="12345678A";
-		sexo='h';
-		domicilio=new Domicilio();
-		telefono=123456789;
-		seguroPrivado="";
-	}
-	public Paciente(String nombre, int edad, String dni, char sexo, Domicilio domicilio, int telefono, String seguroPrivado)
-	{
-		
-	}
 	
 
 }

@@ -1,3 +1,4 @@
+package Persona;
 /*
  * CLASE PERSONA 
  * 
@@ -50,8 +51,6 @@
  * 
  */
 
-import java.util.*;
-import java.io.*;
 public class Persona implements Cloneable, Comparable <Persona>{
 	
 	private String nombre;
