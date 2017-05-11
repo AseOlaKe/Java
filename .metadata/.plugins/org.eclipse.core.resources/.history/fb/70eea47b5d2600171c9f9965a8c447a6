@@ -1,9 +1,0 @@
-package hospital;
-/*
- * Interfaz
- * 
- * 
- */
-public class Paciente {
-
-}

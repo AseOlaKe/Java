@@ -1,8 +1,4 @@
-/*
- *
- * 
- * 
- */
+package conversorTemperaturas;
 
 
 public class ConversorTemperaturasConductores {
