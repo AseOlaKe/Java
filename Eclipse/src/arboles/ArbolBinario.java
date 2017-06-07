@@ -20,6 +20,11 @@ public class ArbolBinario
 	{
 		nodoRaiz=null;
 	}
+	//Métodos consultores y modificadores
+	public NodoArbol getNodoRaiz()
+	{
+		return nodoRaiz;
+	}
 	/*
 	 * Interfaz
 	 * 
@@ -53,15 +58,15 @@ public class ArbolBinario
 	public void agregarNodo(int numero)
 	{
 		NodoArbol nuevo= new NodoArbol(numero);
+		NodoArbol aux=nodoRaiz;
+		NodoArbol nodoPadre;
 		boolean insertado=false;
 		if(estaVacio())
 		{
 			nodoRaiz=nuevo;
 		}
 		else
-		{
-			NodoArbol aux=nodoRaiz;
-			NodoArbol nodoPadre;
+		{			
 			while(!insertado)
 			{
 				nodoPadre=aux;
@@ -89,7 +94,7 @@ public class ArbolBinario
 	/*
 	 * Interfaz
 	 * 
-	 * Este método se encarga de buscar si un nodo existe en el arbol
+	 * Este método se encarga de buscar si un nodo existe en el arbol		MÉTODO QUE NO LE GUSTA A LEO
 	 * Prototipo: void buscarNodo(int numero)
 	 * Precondiciones: No hay
 	 * Entrada: Un entero
@@ -100,50 +105,125 @@ public class ArbolBinario
 	{
 		boolean encontrado=false;
 		boolean finArbol=false;		//Para controlar el fin de Arbol, por si no encuentra el numero
+		NodoArbol aux=nodoRaiz;
 		if(estaVacio())
 		{
 			finArbol=true;
 		}
 		else
-		{	
-			NodoArbol aux=nodoRaiz;
+		{			
 			while(!encontrado&&!finArbol)//!!!!!!!!!!!!!!!!!!!!!!!!!!
 			{
 				if(numero<aux.getNumero())
 				{
-					if(aux.getNumero()==numero)
+					
+					aux=aux.getHijoIzquierdo();
+					if(aux==null)
 					{
-						encontrado=true;
+						finArbol=true;
 					}
-					else
+				}
+			
+				else if (numero>aux.getNumero())
+				{
+						
+	
+					aux=aux.getHijoDerecho();
+					if(aux==null)
 					{
-						aux=aux.getHijoIzquierdo();
-						if(aux==null)
-						{
-							finArbol=true;
-						}
+						finArbol=true;
 					}
+					
 				}
 				else
 				{
-						
-					if(aux.getNumero()==numero)
-					{
-						encontrado=true;
-					}
-					else
-					{
-						aux=aux.getHijoDerecho();
-						if(aux==null)
-						{
-							finArbol=true;
-						}
-					}
+					encontrado=true;
 				}
 			}
 		}
 		return encontrado;
 		
 	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método recursivo recorre el árbol InOrden e imprime los datos
+	 * Precondiciones: No hay
+	 * Entradas: Un nodo raíz
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 */
+	public void recorrerInOrden(NodoArbol nodoRaiz) //Caso base se dará cuando llegue al fin del arbol
+	{
+		if(nodoRaiz!=null)
+		{
+			recorrerInOrden(nodoRaiz.getHijoIzquierdo());
+			System.out.println(nodoRaiz.getNumero());
+			recorrerInOrden(nodoRaiz.getHijoDerecho()); 
+		}
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método recursivo recorre el árbol PreOrden e imprime los datos
+	 * Precondiciones: No hay
+	 * Entradas: Un nodo raíz
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 */
+	public void recorrerPreOrden(NodoArbol nodoRaiz)
+	{
+		if(nodoRaiz!=null)
+		{
+			System.out.println(nodoRaiz.getNumero());
+			recorrerPreOrden(nodoRaiz.getHijoIzquierdo());		
+			recorrerPreOrden(nodoRaiz.getHijoDerecho()); 
+		}
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método recursivo recorre el árbol PostOrden e imprime los datos
+	 * Precondiciones: No hay
+	 * Entradas: Un nodo raíz
+	 * Salidas: No hay
+	 * Postcondiciones: No hay
+	 */
+	public void recorrerPostOrden(NodoArbol nodoRaiz)
+	{
+		if(nodoRaiz!=null)
+		{
+			recorrerPostOrden(nodoRaiz.getHijoIzquierdo());		
+			recorrerPostOrden(nodoRaiz.getHijoDerecho());
+			System.out.println(nodoRaiz.getNumero());
+		}
+	}
+	/*
+	 * Interfaz
+	 * 
+	 * Este método recursivo busca un dato InOrden
+	 * Precondiciones: No hay
+	 * Entradas: Un entero
+	 * Salidas: Un valor booleano
+	 * Postcondiciones: True si lo ha encontrado, false si no
+	 */
+	public boolean buscarInOrden(int numero, NodoArbol nodoRaiz)
+	{
+		boolean encontrado=false;
+		if(nodoRaiz!=null)
+		{
+			if(nodoRaiz.getNumero()==numero)// VERSIÓN ALPHA 0.0.0.1
+			{
+				encontrado=true;
+			}
+			else
+			{	
+				buscarInOrden(numero,nodoRaiz.getHijoIzquierdo());
+				buscarInOrden(numero,nodoRaiz.getHijoDerecho());
+			}
+		}
+		return encontrado;
+	}
+	
 	
 }

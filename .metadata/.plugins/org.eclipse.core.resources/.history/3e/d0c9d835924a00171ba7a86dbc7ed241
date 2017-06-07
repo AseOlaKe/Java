@@ -19,12 +19,6 @@ import java.util.*;
  * 				Caso 2:
  * 					Leer numero
  * 					Buscar numero en arbol*
-				Caso 3:
-					Mostrar arbol InOrden*
-				Caso 4:
-					Mostrar arbol PreOrden*
-				Caso 5:
-					Mostrar arbol PostOrden*
  *			Fin_Segun
  *			PresentarMenuYLeerYValidarOpcion
  *		Fin_Mientras
@@ -47,9 +41,6 @@ public class TestArboles
 		System.out.println("Bienvenido, elige que quieres hacer con el árbol: ");
 		System.out.println("1.- Agregar un nuevo nodo");
 		System.out.println("2.- Buscar nodo");
-		System.out.println("3.- Mostrar nodos InOrden");
-		System.out.println("4.- Mostrar nodos PreOrden");
-		System.out.println("5.- Mostrar nodos PostOrden");
 		System.out.println("0.- Salir");
 	}
 	public static void main(String[]args)
@@ -57,6 +48,7 @@ public class TestArboles
 		int numero,opcion;
 		Scanner teclado=new Scanner(System.in);
 		ArbolBinario ojulaquevamoalia=new ArbolBinario();
+		
 		//PresentarMenuYLeerYValidarOpcion
 		imprimirMenu();
 		do
@@ -74,7 +66,7 @@ public class TestArboles
 			{
 				System.out.println("Negativo charlie, introduce una opcion correcta");
 			}
-		}while(opcion<0||opcion>5);
+		}while(opcion<0);
 		//Fin_PresentarMEnuYLeerYValidarOpcion
 		//Mientras opcion!=0
 		while(opcion!=0)
@@ -87,40 +79,9 @@ public class TestArboles
 					ojulaquevamoalia.agregarNodo(numero);
 				break;
 				case 2:
-					//System.out.println("EN CONSTRUCCION");
-					System.out.println("Introduce un numero");//Leemos numero y buscamos en el arbol
+					System.out.println("Introduce el numero a buscar"); //Leemos numero y buscamos en el arbol
 					numero=teclado.nextInt();
 					System.out.println(ojulaquevamoalia.buscarNodo(numero));
-				break;
-				case 3:
-					if(!ojulaquevamoalia.estaVacio())
-					{
-						ojulaquevamoalia.recorrerInOrden(ojulaquevamoalia.getNodoRaiz());
-					}
-					else
-					{
-						System.out.println("El árbol está vacío");
-					}
-				break;
-				case 4:
-					if(!ojulaquevamoalia.estaVacio())
-					{
-						ojulaquevamoalia.recorrerPreOrden(ojulaquevamoalia.getNodoRaiz());
-					}
-					else
-					{
-						System.out.println("El árbol está vacío");
-					}
-				break;
-				case 5:
-					if(!ojulaquevamoalia.estaVacio())
-					{
-						ojulaquevamoalia.recorrerPostOrden(ojulaquevamoalia.getNodoRaiz());
-					}
-					else
-					{
-						System.out.println("El árbol está vacío");
-					}
 				break;
 			}
 			//Fin_Segun
